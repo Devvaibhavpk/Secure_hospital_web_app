@@ -7,27 +7,26 @@ A web application designed to assist healthcare organizations in transitioning f
 
 ## Table of Contents
 
-1. [Background & Motivation](#background--motivation)  
-2. [Features](#features)  
+1. [Background & Motivation]
+2. [Features]
    - 2.1 Data Classification & Access Management  
    - 2.2 ROI & Risk Assessment Module  
    - 2.3 Modular Deployment for Cost Efficiency  
-3. [Architecture & Security Design](#architecture--security-design)  
+3. [Architecture & Security Design]
    - 3.1 Data Flow Overview  
    - 3.2 Sensitive Data Handling  
    - 3.3 Two-Step Authentication for Admin  
-4. [Deployment](#deployment)  
+4. [Deployment]
    - 4.1 Modular Rollout Strategy  
    - 4.2 Infrastructure Overview: Server & Cloud  
-5. [How It Works](#how-it-works)  
+5. [How It Works] 
    - 5.1 User Roles & Permissions  
    - 5.2 ROI & Risk Assessment Logic  
-6. [Installation](#installation)  
-7. [Usage](#usage)  
-8. [Security Considerations](#security-considerations)  
-9. [Cost & Efficiency Benefits](#cost--efficiency-benefits)  
-10. [Contributing](#contributing)  
-11. [License](#license)  
+6. [Installation] 
+7. [Usage]
+8. [Security Considerations]
+9. [Cost & Efficiency Benefits]
+10. [Contributing]
 
 ---
 
