@@ -99,7 +99,7 @@ Admins must undergo a 2FA process (e.g., OTP or authenticator app) to access hig
 - Visual or numerical outputs that categorize legacy components into “critical” or “high-risk,” guiding strategic upgrades.
 
 ---
-##6. Usage
+## 6. Usage
 
 Login as Admin (using 2FA) or as Doctor/Nurse.
 
