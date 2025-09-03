@@ -22,11 +22,11 @@ A web application designed to assist healthcare organizations in transitioning f
 5. [How It Works] 
    - 5.1 User Roles & Permissions  
    - 5.2 ROI & Risk Assessment Logic  
-6. [Installation] 
-7. [Usage]
-8. [Security Considerations]
-9. [Cost & Efficiency Benefits]
-10. [Contributing]
+6. [Usage]
+7. [Security Considerations]
+8. [Cost & Efficiency Benefits]
+9. [Contributing]
+10. [Installation] 
 
 ---
 
@@ -129,7 +129,7 @@ Selective Cloud Use: Use cloud only where safe—keeping high-risk data internal
 
 Strategic Prioritization: ROI/risk insights help allocate limited budgets to the most impactful upgrades.
 
-## 10. Contributing
+## 9. Contributing
 
 We welcome contributions!
 
@@ -143,7 +143,7 @@ Push to your fork (git push origin feature/my-change)
 
 Open a pull request for review.
 
-## 11. Installation
+## 10. Installation
 
 ```bash
 # Clone the repo
