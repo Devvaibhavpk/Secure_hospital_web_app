@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecureHospitalWebApp</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'textPrimary': '#F8FAFC', // slate-50 - brighter for better visibility
+            'textSecondary': '#CBD5E1', // slate-300 - better contrast than gray-400
+            'textMuted': '#94A3B8', // slate-400 - for less important text
+            'brand-purple': '#9333ea', // purple-600
+            'brand-teal': '#14b8a6',   // teal-500
+            'brand-pink': '#db2777',   // fuchsia-600
+            'accent': '#F59E0B', // amber-500 - brighter accent color
+            'success': '#10B981', // emerald-500
+            'warning': '#F59E0B', // amber-500
+            'error': '#EF4444', // red-500
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            poppins: ['Poppins', 'sans-serif'],
+          },
+        },
+      },
+    }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/react-router-dom@6/umd/react-router-dom.production.min.js"></script>
+    <script src="https://unpkg.com/recharts@2/umd/Recharts.min.js"></script>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "recharts": "https://aistudiocdn.com/recharts@^3.1.2",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.8.2"
+  }
+}
+</script>
+<style>
+    body {
+        background-color: #020010;
+        overflow: hidden;
+        color: #F8FAFC;
+        font-family: 'Inter', sans-serif;
+    }
+    #root {
+        height: 100vh;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+    .aurora-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        overflow: hidden;
+    }
+    .aurora-bg .aurora-shape {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(120px);
+        opacity: 0.4;
+    }
+    .aurora-bg .shape1 {
+        width: 600px;
+        height: 600px;
+        background: #9333ea; /* Purple */
+        top: -150px;
+        left: -150px;
+        animation: move1 25s infinite alternate ease-in-out;
+    }
+    .aurora-bg .shape2 {
+        width: 500px;
+        height: 500px;
+        background: #14b8a6; /* Teal */
+        bottom: -100px;
+        right: -100px;
+        animation: move2 30s infinite alternate ease-in-out;
+    }
+    .aurora-bg .shape3 {
+        width: 400px;
+        height: 400px;
+        background: #db2777; /* Fuchsia */
+        top: 40%;
+        left: 50%;
+        animation: move3 28s infinite alternate ease-in-out;
+    }
+    @keyframes move1 {
+        from { transform: translate(0, 0) rotate(0deg); }
+        to { transform: translate(200px, 300px) rotate(360deg); }
+    }
+    @keyframes move2 {
+        from { transform: translate(0, 0) rotate(0deg); }
+        to { transform: translate(-300px, -200px) rotate(-360deg); }
+    }
+    @keyframes move3 {
+        from { transform: translate(-50%, -50%) rotate(0deg); }
+        to { transform: translate(-40%, -60%) rotate(180deg); }
+    }
+
+    input[type="range"] {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 5px;
+        outline: none;
+        transition: background 0.3s;
+    }
+    input[type="range"]:hover {
+        background: rgba(255, 255, 255, 0.2);
+    }
+    input[type="range"]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 20px;
+        height: 20px;
+        background: #9333ea;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+    input[type="range"]::-moz-range-thumb {
+        width: 20px;
+        height: 20px;
+        background: #9333ea;
+        cursor: pointer;
+        border-radius: 50%;
+    }
+
+    /* Enhanced UI Classes */
+    .shadow-card {
+        box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    .shadow-elevated {
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.4), 0 10px 20px -5px rgba(0, 0, 0, 0.2);
+    }
+    
+    .bg-gradient-security {
+        background: linear-gradient(135deg, #020010 0%, #0f0f23 50%, #1a1a2e 100%);
+    }
+    
+    .bg-gradient-hero {
+        background: linear-gradient(135deg, rgba(147, 51, 234, 0.1) 0%, rgba(20, 184, 166, 0.1) 100%);
+    }
+    
+    .bg-gradient-primary {
+        background: linear-gradient(135deg, #9333ea 0%, #7c3aed 100%);
+    }
+    
+    /* Enhanced text visibility */
+    .text-muted-foreground {
+        color: #94A3B8;
+    }
+    
+    /* Better contrast for cards */
+    .card-enhanced {
+        background: rgba(0, 0, 0, 0.4);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+</style>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="text-textPrimary bg-transparent">
+    <div class="aurora-bg">
+        <div class="aurora-shape shape1"></div>
+        <div class="aurora-shape shape2"></div>
+        <div class="aurora-shape shape3"></div>
+    </div>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>
