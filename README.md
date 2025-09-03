@@ -109,7 +109,41 @@ Doctor/Nurse View: Browse available patient or operational data securely.
 
 Admins can also sync, monitor, and manage data across modules.
 
-## 7. Installation
+## 7. Security Considerations
+
+High-sensitive data never leaves the secured server; no internet exposure.
+
+Use strong encryption (e.g., AES-256) and secure storage.
+
+Enforce secure coding practices: protect against SQL injection, XSS, CSRF, etc.
+
+Log access to sensitive data and manage audit trails.
+
+Regularly update dependencies and patch vulnerabilities.
+
+## 8. Cost & Efficiency Benefits
+
+Phased Deployment: Reduce upfront costs by splitting modernization into manageable stages.
+
+Selective Cloud Use: Use cloud only where safe—keeping high-risk data internal saves cloud bandwidth and risk.
+
+Strategic Prioritization: ROI/risk insights help allocate limited budgets to the most impactful upgrades.
+
+## 10. Contributing
+
+We welcome contributions!
+
+Fork the repo
+
+Create a feature branch (git checkout -b feature/my-change)
+
+Commit your changes (git commit -am 'Add feature')
+
+Push to your fork (git push origin feature/my-change)
+
+Open a pull request for review.
+
+## 11. Installation
 
 ```bash
 # Clone the repo
